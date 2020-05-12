@@ -31,13 +31,13 @@ function heartClick() {// forEach span, if clicked invoke function
 function callback(e){
   let heart = e.target
   mimicServerCall()
-  .then(message => { // DO THIS WHEN PROMISE IS FULFILLED 
+  .then(message => { // DO THIS WHEN PROMISE IS FULFILLED
     heart.innerText = glyphStates[heart.innerText] // just switch current to new text/html
     heart.style.color = colorStates[heart.style.color] // just switch current to new color
     console.log('Promise Fulfilled')
   })
-  .catch(message => { // DO THIS WHEN PROMISE IS REJECTED 
-    errorModal.hidden = false 
+  .catch(message => { // DO THIS WHEN PROMISE IS REJECTED
+    errorModal.hidden = false
     console.log("Promise Rejected")
     setTimeout(function(){
       errorModal.hidden = true
